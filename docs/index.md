@@ -106,23 +106,38 @@
             <h2>Project Structure</h2>
             <pre>
 Expense-Tracker/
-├── backend/
-│   ├── app/
-│   │   ├── main.py              # FastAPI entry point
-│   │   ├── models.py            # SQLAlchemy database models
-│   │   ├── schemas.py           # Pydantic schemas for validation
-│   │   ├── crud.py              # CRUD operations
-│   │   ├── database.py          # Database connection
-│   │   ├── templates/           # HTML templates
-│   │   │   └── index.html       # Main HTML file
-│   ├── tests/
-│       ├── test_api.py          # Unit tests for API
-├── frontend/
-│   ├── static/
-│   │   ├── styles.css           # CSS styles
-│   │   ├── script.js            # JavaScript for interactivity
-├── README.md                    # Documentation
-├── requirements.txt             # Project dependencies
+├── config/                       # Configuration files for the project
+│   ├── __init__.py               # Initializes the config package
+│   ├── asgi.py                   # ASGI configuration for asynchronous support (used for ASGI servers like Daphne or Uvicorn)
+│   ├── settings.py               # Project settings (e.g., database, middleware, installed apps)
+│   ├── urls.py                   # URL routing for the project (maps URLs to views)
+│   ├── wsgi.py                   # WSGI configuration for synchronous support (used for WSGI servers like Gunicorn)
+│    
+├── expenses/                     # Core app for handling expenses and related functionality
+│   ├── __init__.py               # Initializes the expenses app package
+│   ├── admin.py                  # Registers models for Django admin interface (if using Django)
+│   ├── apps.py                   # Configuration for the expenses app
+│   ├── forms.py                  # Forms for handling user input (e.g., for creating or editing expenses)
+│   ├── models.py                 # Database models for expenses (e.g., Expense, Category)
+│   ├── tests.py                  # Unit tests for the expenses app
+│   ├── urls.py                   # URL routing for the expenses app (maps URLs to views related to expenses)
+│   ├── views.py                  # Views that handle the logic for rendering pages or APIs related to expenses
+│   ├── migrations/               # Database migration files for changes to models
+│   │   ├── __init__.py           # Initializes the migrations package
+│   │   ├── 0001_initial.py       # Initial migration file (generated automatically when models change)
+│   ├── templates/                # HTML templates for rendering pages
+│   │   ├── edit_expense.html     # Template for editing an expense
+│   │   ├── index.html            # Template for displaying all expenses or main page
+│   ├── static/                   # Static files (CSS, JS, images)
+│   │   ├── css/                  # CSS styles
+│   │   │   ├── styles.css        # Main CSS file for the frontend
+│
+├── manage.py                     # Command-line utility for administrative tasks (e.g., runserver, makemigrations, migrate)
+├── Pipfile                       # Specifies the dependencies for the project (used by Pipenv)
+├── db.sqlite3                    # SQLite database file containing all the data for the app
+├── requirements.txt              # Project dependencies (for Pip package manager)
+├── README.md                     # Project documentation
+
             </pre>
         </section>
 
