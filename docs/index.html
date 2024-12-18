@@ -120,23 +120,59 @@
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Project Structure&lt;/h2&gt;</p>
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;pre&gt;</p>
 <p class="p1">Expense-Tracker/</p>
-<p class="p1">├── backend/</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>├── app/</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── main.py<span class="Apple-converted-space">              </span># FastAPI entry point</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── models.py<span class="Apple-converted-space">            </span># SQLAlchemy database models</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── schemas.py <span class="Apple-converted-space">          </span># Pydantic schemas for validation</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── crud.py<span class="Apple-converted-space">              </span># CRUD operations</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── database.py<span class="Apple-converted-space">          </span># Database connection</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── templates/ <span class="Apple-converted-space">          </span># HTML templates</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>└── index.html <span class="Apple-converted-space">      </span># Main HTML file</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>├── tests/</p>
-<p class="p1">│ <span class="Apple-converted-space">      </span>├── test_api.py<span class="Apple-converted-space">          </span># Unit tests for API</p>
-<p class="p1">├── frontend/</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>├── static/</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── styles.css <span class="Apple-converted-space">          </span># CSS styles</p>
-<p class="p1">│ <span class="Apple-converted-space">  </span>│ <span class="Apple-converted-space">  </span>├── script.js<span class="Apple-converted-space">            </span># JavaScript for interactivity</p>
-<p class="p1">├── README.md<span class="Apple-converted-space">                    </span># Documentation</p>
-<p class="p1">├── requirements.txt <span class="Apple-converted-space">            </span># Project dependencies</p>
+<p class="p1">├── config/                     </p>
+<p class="p1">│   ├── __init__.py             </p>
+<p class="p1">│   │   # Initializes the backend package</p>
+<p class="p1">│   ├── asgi.py                 </p>
+<p class="p1">│   │   # ASGI configuration for asynchronous server</p>
+<p class="p1">│   ├── settings.py             </p>
+<p class="p1">│   │   # Project settings (database, installed apps, etc.)</p>
+<p class="p1">│   ├── urls.py                 </p>
+<p class="p1">│   │   # URL routing for the project</p>
+<p class="p1">│   ├── wsgi.py                 </p>
+<p class="p1">│   │   # WSGI configuration for synchronous server</p>
+<p class="p1">├── expenses/                   </p>
+<p class="p1">│   ├── __init__.py             </p>
+<p class="p1">│   │   # Initializes the expenses app</p>
+<p class="p1">│   ├── admin.py                </p>
+<p class="p1">│   │   # Admin interface configurations for expenses model</p>
+<p class="p1">│   ├── apps.py                 </p>
+<p class="p1">│   │   # App configuration for the expenses app</p>
+<p class="p1">│   ├── forms.py                </p>
+<p class="p1">│   │   # Forms for handling user input (expenses data)</p>
+<p class="p1">│   ├── models.py               </p>
+<p class="p1">│   │   # Database models for expenses</p>
+<p class="p1">│   ├── tests.py                </p>
+<p class="p1">│   │   # Unit tests for the expenses app</p>
+<p class="p1">│   ├── urls.py                 </p>
+<p class="p1">│   │   # URL routing specific to the expenses app</p>
+<p class="p1">│   ├── views.py                </p>
+<p class="p1">│   │   # Views to handle user requests (rendering pages, etc.)</p>
+<p class="p1">│   ├── migrations/             </p>
+<p class="p1">│   │   ├── __init__.py         </p>
+<p class="p1">│   │   │   # Initializes migrations directory</p>
+<p class="p1">│   │   ├── 0001_initial.py     </p>
+<p class="p1">│   │   │   # Initial database migration file</p>
+<p class="p1">│   ├── templates/              </p>
+<p class="p1">│   │   ├── edit_expense.html   </p>
+<p class="p1">│   │   │   # Template for editing expenses</p>
+<p class="p1">│   │   ├── index.html          </p>
+<p class="p1">│   │   │   # Template for displaying the expense tracker</p>
+<p class="p1">│   ├── static/                 </p>
+<p class="p1">│   │   ├── css/                </p>
+<p class="p1">│   │   │   ├── styles.css      </p>
+<p class="p1">│   │   │   │   # Styles for the frontend</p>
+<p class="p1">├── manage.py                   </p>
+<p class="p1">│   # Command-line utility for managing the project</p>
+<p class="p1">├── Pipfile                     </p>
+<p class="p1">│   # Dependency management file (Pipenv)</p>
+<p class="p1">├── db.sqlite3                  </p>
+<p class="p1">│   # SQLite database file</p>
+<p class="p1">├── requirements.txt            </p>
+<p class="p1">│   # List of dependencies (if not using Pipenv)</p>
+<p class="p1">├── README.md                   </p>
+<p class="p1">│   # Project documentation and instructions</p>
+
 <p class="p1"><span class="Apple-converted-space">            </span>&lt;/pre&gt;</p>
 <p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
 <p class="p2"><br></p>
