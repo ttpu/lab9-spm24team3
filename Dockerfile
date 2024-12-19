@@ -13,4 +13,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5030
 
 # Run the Flask app
-CMD ["cd src && python manage.py migrate && python manage.py runserver"]
+CMD ["python src/manage.py migrate && python src/manage.py runserver"]
