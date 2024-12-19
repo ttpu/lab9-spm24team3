@@ -100,7 +100,7 @@ Expense-Tracker/
    ```
 2. Navigate to the project directory:
    ```bash
-   cd Expense-Tracker
+   cd src
    ```
 3. Install dependencies:
    ```bash
