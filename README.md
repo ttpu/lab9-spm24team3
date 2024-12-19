@@ -1,9 +1,10 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/Z2qKazcY)
 ## Team N:
 
 * _(ID, Name, Surname)_
-* Student N1:
-* Student N2:
-* Student N3:
+* Student N1: se13333, Abdurashidbek, Sadullaev (Team lead, backend)
+* Student N2: se13438, Sevinch, Rasulova (Design)
+* Student N3: se14201, Shokhjahon, Nosirov (Front)
 * Student N4:
 
 # Expense Tracker: Project Description
