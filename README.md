@@ -4,7 +4,7 @@
 * _(ID, Name, Surname)_
 * Student N1: se13333, Abdurashidbek, Sadullaev (Team lead, backend)
 * Student N2: se13438, Sevinch, Rasulova (Design)
-* Student N3:
+* Student N3: se14201, Shokhjahon, Nosirov (Front)
 * Student N4:
 
 # Expense Tracker: Project Description
